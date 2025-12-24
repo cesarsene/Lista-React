@@ -34,9 +34,6 @@ O objetivo deste projeto é praticar os conceitos fundamentais de:
 - **Node.js**
 - **CSS puro**
 
-> ⚠️ Não é necessário instalar TypeScript globalmente.  
-> O TypeScript é instalado e configurado automaticamente pelo Vite.
-
 ---
 
 ## 📂 Estrutura de Pastas
