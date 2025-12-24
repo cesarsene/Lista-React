@@ -1,75 +1,40 @@
-import { useEffect, useState } from "react"
 import { TaskForm } from "./components/TaskForm"
-import { TaskItem } from "./components/TaskItem"
-import type { Task } from "./Types"
+import {TaskList} from "./components/TaskList"
+import { TaskStats } from "./components/TaskStats"
+import { TaskFilters } from "./components/TaskFilters"
+import { useTasks } from "./Hooks/useTasks"
 
-type Filter = "all" | "completed" | "pending"
-
-const STORAGE_KEY = "tasks"
-
-export default function App() {
-  const [tasks, setTasks] = useState<Task[]>(() => {
-    const storedTasks = localStorage.getItem(STORAGE_KEY)
-    return storedTasks ? JSON.parse(storedTasks) : []
-  })
-
-  const [filter, setFilter] = useState<Filter>("all")
-
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
-  }, [tasks])
-
-  function addTask(title: string) {
-    const newTask: Task = {
-      id: Date.now(),
-      title,
-      completed: false,
-    }
-    setTasks([...tasks, newTask])
-  }
-
-  function toggleTask(id: number) {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id
-          ? { ...task, completed: !task.completed }
-          : task
-      )
-    )
-  }
-
-  function removeTask(id: number) {
-    setTasks(tasks.filter((task) => task.id !== id))
-  }
-
-  const filteredTasks = tasks.filter((task) => {
-    if (filter === "completed") return task.completed
-    if (filter === "pending") return !task.completed
-    return true
-  })
+export function App() {
+  const {
+    tasks,
+    filter,
+    setFilter,
+    addTask,
+    toggleTask,
+    removeTask,
+    updateTask,
+    total,
+    completed,
+    pending,
+  } = useTasks()
 
   return (
     <div>
-      <h1>Lista de Tarefas</h1>
+      <h1>Todo List</h1>
 
-      <TaskForm onAddTask={addTask} />
-
-      <div style={{ marginBottom: "10px" }}>
-        <button onClick={() => setFilter("all")}>Todas</button>
-        <button onClick={() => setFilter("completed")}>Concluídas</button>
-        <button onClick={() => setFilter("pending")}>Pendentes</button>
-      </div>
-
-      <ul>
-        {filteredTasks.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            onToggle={toggleTask}
-            onRemove={removeTask}
-          />
-        ))}
-      </ul>
+     <TaskForm onAddTask={addTask} />
+      <TaskFilters filter={filter} onChange={setFilter} />
+      <TaskStats
+        total={total}
+        completed={completed}
+        pending={pending}
+      />
+      <TaskList
+        tasks={tasks}
+        onToggle={toggleTask}
+        onRemove={removeTask}
+        onUpdate={updateTask}
+      />
     </div>
   )
 }
