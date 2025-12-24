@@ -1,56 +1,65 @@
-# 📋 Lista de Tarefas – React + TypeScript + Vite
+## Novos módulos
 
-Projeto simples de **Lista de Tarefas (To-Do List)** desenvolvido com **React**, **TypeScript** e **Vite**, com foco em aprendizado, organização de código e boas práticas modernas do ecossistema React.
+### Nesta fase do projeto foram realizadas melhorias estruturais e funcionais com foco em organização, reutilização de código e preparação para evolução futura.
 
----
-
-## 🎯 Objetivo do Projeto
-
-O objetivo deste projeto é praticar os conceitos fundamentais de:
-- Componentização em React
-- Gerenciamento de estado com `useState`
-- Tipagem estática com TypeScript
-- Organização de pastas e imports corretos
-- Configuração moderna com Vite
+Essa organização facilita a manutenção, leitura do código e escalabilidade da aplicação.
 
 ---
 
-## 🚀 Funcionalidades
+### Implementações Realizadas
 
-- ✅ Adicionar novas tarefas
-- ✅ Listar tarefas
-- ✅ Marcar tarefas como concluídas
-- ✅ Remover tarefas
-- ✅ Tipagem forte com TypeScript
-- ✅ Componentes reutilizáveis
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **React**
-- **TypeScript**
-- **Vite**
-- **Node.js**
-- **CSS puro**
-
-> ⚠️ Não é necessário instalar TypeScript globalmente.  
-> O TypeScript é instalado e configurado automaticamente pelo Vite.
+- Criação de hooks personalizados para centralizar regras de negócio
+- Separação da lógica de estado dos componentes visuais
+- Uso consistente de TypeScript para tipagem das entidades
+- Estruturação de serviços para isolar responsabilidades específicas
+- Padronização da forma de escrita e organização do código
 
 ---
 
-## 📂 Estrutura de Pastas
+### Evolução do Projeto
 
-```txt
+Com essas mudanças, o projeto evoluiu para uma base mais sólida, organizada e preparada para crescimento.  
+A aplicação agora possui uma arquitetura mais clara, facilitando testes, manutenção e futuras implementações.
+
+
+
+---
+
+### Criação de Pastas
+
+O projeto passou por uma reorganização da estrutura de diretórios para separar melhor as responsabilidades:
 src/
- ├─ components/
- │  ├─ TaskForm.tsx
- │  └─ TaskItem.tsx
- │
- ├─ types/
- │  ├─ Task.ts
- │  └─ index.ts
- │
- ├─ App.tsx
- ├─ main.tsx
- └─ index.css
+├── components/
+│ ├── TaskItem.tsx
+│ ├── TaskList.tsx
+│ ├── TaskFilter.tsx
+│ └── TaskStats.tsx
+│
+├── hooks/
+│ └── useTasks.ts
+│
+├── types/
+│ └── index.ts
+│
+├── styles/
+│ └── global.css
+│
+├── App.tsx
+├── main.tsx
+
+---
+## Preview: 
+
+<img width="413" height="397" alt="image" src="https://github.com/user-attachments/assets/f19007f3-aec2-4dc4-aa70-762eb1e6a8e2" />
+
+---
+
+<img width="502" height="540" alt="image" src="https://github.com/user-attachments/assets/2f1145f9-a074-4e38-b7ed-0e93537f9b30" />
+
+---
+
+<img width="624" height="377" alt="image" src="https://github.com/user-attachments/assets/2c5f59ac-71f1-4560-9437-8147ffac38ae" />
+
+
+
+
