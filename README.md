@@ -1,56 +1,33 @@
-# 📋 Lista de Tarefas – React + TypeScript + Vite
+# 🌱 Uso de Branches no Git – Trabalho Isolado
 
-Projeto simples de **Lista de Tarefas (To-Do List)** desenvolvido com **React**, **TypeScript** e **Vite**, com foco em aprendizado, organização de código e boas práticas modernas do ecossistema React.
+Este repositório utiliza **branches do Git** para permitir o desenvolvimento de novas funcionalidades ou projetos **sem impactar a branch principal (`main`)**.
 
----
-
-## 🎯 Objetivo do Projeto
-
-O objetivo deste projeto é praticar os conceitos fundamentais de:
-- Componentização em React
-- Gerenciamento de estado com `useState`
-- Tipagem estática com TypeScript
-- Organização de pastas e imports corretos
-- Configuração moderna com Vite
+Essa abordagem garante segurança, organização e um fluxo profissional de versionamento.
 
 ---
 
-## 🚀 Funcionalidades
+## 🎯 Objetivo
 
-- ✅ Adicionar novas tarefas
-- ✅ Listar tarefas
-- ✅ Marcar tarefas como concluídas
-- ✅ Remover tarefas
-- ✅ Tipagem forte com TypeScript
-- ✅ Componentes reutilizáveis
+- Manter a **branch `main` sempre estável**
+- Desenvolver novas ideias, testes ou projetos em **branches separadas**
+- Evitar conflitos e perda de código
+- Facilitar comparação e evolução do projeto
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🌳 Estrutura de Branches
 
-- **React**
-- **TypeScript**
-- **Vite**
-- **Node.js**
-- **CSS puro**
+- **main**
+  - Versão estável do projeto
+  - Não recebe alterações diretas
 
-> ⚠️ Não é necessário instalar TypeScript globalmente.  
-> O TypeScript é instalado e configurado automaticamente pelo Vite.
+- **feature/***
+  - Branches de desenvolvimento
+  - Usadas para novas funcionalidades ou projetos
 
----
-
-## 📂 Estrutura de Pastas
-
+Exemplo:
 ```txt
-src/
- ├─ components/
- │  ├─ TaskForm.tsx
- │  └─ TaskItem.tsx
- │
- ├─ types/
- │  ├─ Task.ts
- │  └─ index.ts
- │
- ├─ App.tsx
- ├─ main.tsx
- └─ index.css
+main
+feature/novo-projeto
+feature/todo-localstorage
+
