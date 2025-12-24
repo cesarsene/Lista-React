@@ -1,17 +1,19 @@
-# Uso de Branches no Git – Trabalho Isolado
+# 📝 Todo List — React + TypeScript: Persistencia de dados ao carrregar página
 
-Este repositório utiliza **branches do Git** para permitir o desenvolvimento de novas funcionalidades ou projetos **sem impactar a branch principal (`main`)**.
-
-Essa abordagem garante segurança, organização e um fluxo profissional de versionamento.
+Task de **Lista de Tarefas (Todo List)** desenvolvido com **React**, **TypeScript** com código organizado, tipado e documentado, incluindo persistência em **LocalStorage** e filtros de visualização
 
 ---
 
-## Objetivo
+## 📌 Visão Geral
 
-- Manter a **branch `main` sempre estável**
-- Desenvolver novas ideias, testes ou projetos em **branches separadas**
-- Evitar conflitos e perda de código
-- Facilitar comparação e evolução do projeto
+Este projeto tem como objetivo praticar:
+
+- React com TypeScript
+- Componentização
+- Tipagem forte
+- Gerenciamento de estado
+- Persistência de dados no navegador
+- Boas práticas de organização de pastas
 
 ---
 
