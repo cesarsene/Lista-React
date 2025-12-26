@@ -1,56 +1,69 @@
-# 📋 Lista de Tarefas – React + TypeScript + Vite
+# Lista de Tarefas – React + TypeScript
 
-Projeto simples de **Lista de Tarefas (To-Do List)** desenvolvido com **React**, **TypeScript** e **Vite**, com foco em aprendizado, organização de código e boas práticas modernas do ecossistema React.
-
----
-
-## 🎯 Objetivo do Projeto
-
-O objetivo deste projeto é praticar os conceitos fundamentais de:
-- Componentização em React
-- Gerenciamento de estado com `useState`
-- Tipagem estática com TypeScript
-- Organização de pastas e imports corretos
-- Configuração moderna com Vite
+Este projeto é uma aplicação de lista de tarefas desenvolvida com **React + TypeScript**, focada em boas práticas de organização, tipagem forte e design consistente sem dependência obrigatória de frameworks CSS.
 
 ---
 
-## 🚀 Funcionalidades
+## 📌 Objetivo do Projeto
 
-- ✅ Adicionar novas tarefas
-- ✅ Listar tarefas
-- ✅ Marcar tarefas como concluídas
-- ✅ Remover tarefas
-- ✅ Tipagem forte com TypeScript
-- ✅ Componentes reutilizáveis
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **React**
-- **TypeScript**
-- **Vite**
-- **Node.js**
-- **CSS puro**
-
-> ⚠️ Não é necessário instalar TypeScript globalmente.  
-> O TypeScript é instalado e configurado automaticamente pelo Vite.
+- Criar uma aplicação simples e funcional de tarefas
+- Utilizar React com TypeScript
+- Trabalhar filtros (todas, pendentes, concluídas)
+- Organizar regras de negócio em hooks
+- Criar um design system em CSS puro
 
 ---
 
-## 📂 Estrutura de Pastas
+## 🧠 Estrutura do Projeto
 
-```txt
 src/
- ├─ components/
- │  ├─ TaskForm.tsx
- │  └─ TaskItem.tsx
- │
- ├─ types/
- │  ├─ Task.ts
- │  └─ index.ts
- │
- ├─ App.tsx
- ├─ main.tsx
- └─ index.css
+├── App.tsx  
+├── main.tsx  
+├── Hooks/
+│   └── useTasks.ts  
+├── Components/
+│   ├── TaskFilters.tsx
+│   ├── TaskItem.tsx
+│   └── TaskList.tsx
+├── styles/
+│   └── design-system.css  
+
+---
+
+## ⚙️ Principais Implementações
+
+### ✔ Gerenciamento de tarefas
+- Adição de tarefas
+- Marcar como concluída
+- Remover tarefas
+- Filtragem dinâmica
+
+### ✔ Hook personalizado (`useTasks`)
+- Centraliza a lógica de tarefas
+- Tipagem forte com TypeScript
+- Evita duplicação de lógica no `App.tsx`
+
+### ✔ Sistema de filtros
+- `all` → Todas
+- `active` → Pendentes
+- `completed` → Concluídas
+
+---
+
+## 🐞 Erros Corrigidos
+
+### 1️⃣ Erro: `@tailwind base is no longer available in v4`
+**Causa:** Uso de diretivas antigas do Tailwind v3  
+**Solução:**  
+- Remoção das diretivas `@tailwind`
+- Substituição por CSS puro
+
+---
+
+### 2️⃣ Erro: `Unknown at rule @apply`
+**Causa:** `@apply` é exclusivo do Tailwind  
+**Solução:**  
+- Criação de um arquivo `design-system.css`
+- Conversão de todas as regras para CSS puro
+
+---

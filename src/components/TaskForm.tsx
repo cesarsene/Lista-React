@@ -17,14 +17,29 @@ export function TaskForm({ onAddTask }: TaskFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Digite uma tarefa"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <button type="submit">Adicionar</button>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-2 items-center"
+    >
+      <label className="text-sm text-neutral-400">
+        Digite uma nova tarefa
+      </label>
+
+      <div className="flex w-full gap-2">
+        <input
+          className="ds-input"
+          placeholder="Ex: Estudar React por 30 minutos"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+
+        <button
+          type="submit"
+          className="ds-button ds-button-primary"
+        >
+          Adicionar
+        </button>
+      </div>
     </form>
   )
 }
